@@ -1,0 +1,28 @@
+#:kivy 2.3
+
+MDScreen:
+    Image:
+        source: 'mylogo.png'
+        size: self.texture_size
+    MDLabel:
+        adaptive_size: True
+        pos_hint: {"center_x":0.5, "center_y":0.8}
+        text: "All About Me"
+        padding: "4dp", "4dp"
+        font_style: "H2"
+    MDLabel:
+        adaptive_size: True
+        pos_hint: {"center_x":0.5, "center_y":0.7}
+        text: "Mercy Wolverton"
+        padding: "4dp", "4dp"
+        font_style: "H4"
+
+    MDRectangleFlatButton:
+        adaptive_size: True
+        pos_hint: {"center_x":0.5, "center_y":0.5}
+        text: "My Hobbies"
+
+    MDRectangleFlatButton:
+        adaptive_size: True
+        pos_hint: {"center_x":0.5, "center_y":0.45}
+        text: "My Favorites"
