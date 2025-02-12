@@ -1,34 +1,165 @@
 #:kivy 2.3
+<HomeScreen>:
+    id: home
+    HomeScreenCanvas:
+        FloatLayout:
+            Image:
+                source: 'personal_portrait.png'
+                allow_stretch: True
+                keep_ratio: True
+                size_hint_y: None
+                size_hint_x: None
+                width: self.parent.width
+                height: self.parent.width/self.image_ratio
+                pos_hint: {"center_x":0.5, "center_y":0.2}
+            MDLabel:
+                adaptive_size: True
+                pos_hint: {"center_x":0.5, "center_y":0.8}
+                text: "All About Me"
+                padding: "4dp", "4dp"
+                font_style: "H2"
+            MDLabel:
+                adaptive_size: True
+                pos_hint: {"center_x":0.5, "center_y":0.7}
+                text: "Mercy Wolverton"
+                padding: "4dp", "4dp"
+                font_style: "H4"
 
-MDScreen:
-    Image:
-        source: 'personal_portrait.png'
-        allow_stretch: True
-        keep_ratio: True
-        size_hint_y: None
-        size_hint_x: None
-        width: self.parent.width
-        height: self.parent.width/self.image_ratio
+            MDRectangleFlatButton:
+                adaptive_size: True
+                pos_hint: {"center_x":0.5, "center_y":0.6}
+                text: "My Hobbies"
+                font_size: "20sp"
+                on_press: app.root.current = 'hobbies'
 
-    MDLabel:
-        adaptive_size: True
-        pos_hint: {"center_x":0.5, "center_y":0.8}
-        text: "All About Me"
-        padding: "4dp", "4dp"
-        font_style: "H2"
-    MDLabel:
-        adaptive_size: True
-        pos_hint: {"center_x":0.5, "center_y":0.7}
-        text: "Mercy Wolverton"
-        padding: "4dp", "4dp"
-        font_style: "H4"
+            MDRectangleFlatButton:
+                adaptive_size: True
+                pos_hint: {"center_x":0.5, "center_y":0.55}
+                text: "My Favorites"
+                font_size: "20sp"
+                on_press: app.root.current = 'favorites'
 
-    MDRectangleFlatButton:
-        adaptive_size: True
-        pos_hint: {"center_x":0.5, "center_y":0.5}
-        text: "My Hobbies"
+<HobbiesScreen>:
+    id: hobbies
+    HobbiesScreenCanvas:
+        FloatLayout:
+            MDTopAppBar:
+                title: "My Hobbies"
+                left_action_items: [["home", lambda x: app.go_home()]]
+                pos_hint: {"top": 1}
 
-    MDRectangleFlatButton:
-        adaptive_size: True
-        pos_hint: {"center_x":0.5, "center_y":0.45}
-        text: "My Favorites"
+            MDGridLayout:
+                cols: 3  # 🔹 3 columns
+                rows: 2  # 🔹 2 rows
+                spacing: "10dp"
+                padding: "10dp"
+                size_hint: 1, 0.8
+                pos_hint: {"center_x": 0.5, "center_y": 0.45}
+
+                # 🔹 Hobby 1
+                FloatLayout:
+                    Image:
+                        source: "hobby1.png"
+                        size_hint_y: None
+                        height: self.width
+                        allow_stretch: True
+                        keep_ratio: True
+                        pos_hint: {"center_x": 0.5, "top": 1}
+                    MDLabel:
+                        text: "Hobby 1"
+                        halign: "center"
+                        size_hint_y: None
+                        height: "30dp"
+                        pos_hint: {"center_x": 0.5, "y": 0}
+
+                # 🔹 Hobby 2
+                FloatLayout:
+                    Image:
+                        source: "hobby2.png"
+                        size_hint_y: None
+                        height: self.width
+                        allow_stretch: True
+                        keep_ratio: True
+                        pos_hint: {"center_x": 0.5, "top": 1}
+                    MDLabel:
+                        text: "Hobby 2"
+                        halign: "center"
+                        size_hint_y: None
+                        height: "30dp"
+                        pos_hint: {"center_x": 0.5, "y": 0}
+
+                # 🔹 Hobby 3
+                FloatLayout:
+                    Image:
+                        source: "hobby3.png"
+                        size_hint_y: None
+                        height: self.width
+                        allow_stretch: True
+                        keep_ratio: True
+                        pos_hint: {"center_x": 0.5, "top": 1}
+                    MDLabel:
+                        text: "Hobby 3"
+                        halign: "center"
+                        size_hint_y: None
+                        height: "30dp"
+                        pos_hint: {"center_x": 0.5, "y": 0}
+
+                # 🔹 Hobby 4
+                FloatLayout:
+                    Image:
+                        source: "hobby4.png"
+                        size_hint_y: None
+                        height: self.width
+                        allow_stretch: True
+                        keep_ratio: True
+                        pos_hint: {"center_x": 0.5, "top": 1}
+                    MDLabel:
+                        text: "Hobby 4"
+                        halign: "center"
+                        size_hint_y: None
+                        height: "30dp"
+                        pos_hint: {"center_x": 0.5, "y": 0}
+
+                # 🔹 Hobby 5
+                FloatLayout:
+                    Image:
+                        source: "hobby5.png"
+                        size_hint_y: None
+                        height: self.width
+                        allow_stretch: True
+                        keep_ratio: True
+                        pos_hint: {"center_x": 0.5, "top": 1}
+                    MDLabel:
+                        text: "Hobby 5"
+                        halign: "center"
+                        size_hint_y: None
+                        height: "30dp"
+                        pos_hint: {"center_x": 0.5, "y": 0}
+
+                # 🔹 Hobby 6
+                FloatLayout:
+                    Image:
+                        source: "hobby6.png"
+                        size_hint_y: None
+                        height: self.width
+                        allow_stretch: True
+                        keep_ratio: True
+                        pos_hint: {"center_x": 0.5, "top": 1}
+                    MDLabel:
+                        text: "Hobby 6"
+                        halign: "center"
+                        size_hint_y: None
+                        height: "30dp"
+                        pos_hint: {"center_x": 0.5, "y": 0}
+
+
+<FavoritesScreen>:
+    id: favorites
+    FavoritesScreenCanvas:
+        FloatLayout:
+            MDLabel:
+                adaptive_size: True
+                pos_hint: {"center_x":0.5, "center_y":0.8}
+                text: "My Favorites"
+                padding: "4dp", "4dp"
+                font_style: "H2"
